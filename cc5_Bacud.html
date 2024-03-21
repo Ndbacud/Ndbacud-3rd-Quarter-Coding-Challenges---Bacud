@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 5
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+           
+        </style>
+    </head>
+    <body>
+      <h1>Modified FLAMES</h1>
+      <input type="text" id="name1" placeholder="Name 1">
+      <input type="text" id="name2" placeholder="Name 2">
+      <button onclick="flames()">Match Names</button>
+      <h3 id="name">Names:</h3>
+      <h4>FLAMES Result:</h4>
+      <h3 id="result"></h3>
+      
+      
+      <script>
+
+      function flames() {
+          const firstName = document.getElementById("name1").value.trim().replace(/\s+|\W/g, "");
+          const secondName = document.getElementById("name2").value.trim().replace(/\s+|\W/g, "");
+
+          document.getElementById("name").textContent = firstName + " and " + secondName;
+      
+          const totalName = firstName + secondName;
+          const totalChars = totalName.length;
+          let result = totalChars % 6; 
+          document.getElementById("result").innerHTML;
+      
+          switch (result) { 
+            case 1:
+              document.getElementById("result").textContent += "Friends";
+              break;
+            case 2:
+              document.getElementById("result").textContent += "Lovers";
+              break;
+            case 3:
+              document.getElementById("result").textContent += "Acquaintances";
+              break;
+            case 4:
+              document.getElementById("result").textContent += "Marriage";
+              break;
+            case 5:
+              document.getElementById("result").textContent += "Enemies";
+              break;
+            case 6:
+              document.getElementById("result").textContent += "Sweethearts";
+              break;
+          }
+        }
+      </script>
+    </body>
+</html>
